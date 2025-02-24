@@ -17,13 +17,13 @@ Primeiramente deve ser criada um TOKEN de API com permissão total (CRUD) para o
 
 ## Minio with Certbot/Let's Encrypt
 
-### Via HTTP
+### With HTTP
 
 Using '--http-01-port 9002' changes the listening port of the challenge, but when Let's Encrypt tries to access, it will always use port 80. The purpose of this parameter is to use a different port if port 80 is being used on the same host. If you need another port like 9002 chosen by me, one of the alternatives below will be necessary:
 
 * Use a reverse proxy on Apache, NGINX or other to redirect a certain request on that domain to that internal service:port.
 * Use another host on the same network (Public or internal) and redirect the request to the IP:80 of the Minio/Storage host.
 
-### Via DNS (With DigitalOcean provider)
+### With DNS (With DigitalOcean provider)
 
 First, an API TOKEN must be created with full permission (CRUD) for the permission group called "domains". No other permissions are required. Save this TOKEN and update it in the corresponding script (2).
